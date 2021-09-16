@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>geolocation</title>
+
+    </head>
+    <body>
+        <button onclick="getLocation()" type="button" >location</button>
+        <br>
+        <h3 id="cods"></h3>
+        <script>
+            var x=document.getElementById("cods");
+            function getLocation(){
+                if(navigator.geolocation){//to check if browser supports geolocation
+                navigator.geolocation.getCurrentPosition(showPosition);
+                }
+                else{
+                    x.innerHTML="geo location is not supported by this browser";
+                }
+            }
+            function showPosition(position) {
+                 x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+            }
+        </script>        
+    </body>
+</html>

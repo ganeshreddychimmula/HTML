@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            canvas
+        </title>
+        <style>
+            #mycanvas{
+                border: 3px black solid;
+                background-color: lightgray;
+            }
+            #yrcanvas{
+                border: 3px black solid;
+                background-color: gray;
+                
+            }
+
+        </style>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="400" height="400"></canvas>
+        <br>
+        
+    <script>
+        var v=document.getElementById("mycanvas");
+        var ctx=v.getContext('2d');
+
+        //  Rectangle
+        ctx.fillStyle='red';
+        ctx.fillRect(0,0,300,300);
+        
+        //line
+        ctx.moveTo(0,0);
+        ctx.lineTo(350,350);
+        ctx.lineTo(300,350);
+        ctx.lineTo(100,200);
+        ctx.stroke();
+
+        //circle
+        ctx.beginPath();
+        ctx.arc(300, 50, 40, 0, 2 * Math.PI);//arc(x,y,radius.start angle,endangle)
+        //ctx.arc(200, 200, 200, 0, 2 * Math.PI);
+        ctx.fillStyle="blue";
+        ctx.fill();
+        ctx.lineWidth="10";//for border lines
+        ctx.strokeStyle="green"
+        ctx.stroke();
+
+        //text
+        ctx.font="50px Arial";
+        ctx.strokeStyle="pink";
+        ctx.lineWidth="2";//previous linewidth applies to this if not changed
+        ctx.strokeText("hello world",20,150);
+        
+    </script>
+    <canvas id="yrcanvas" width="500" height="500" ></canvas>
+    <script>
+    var c=document.getElementById("yrcanvas");
+    var vtx=c.getContext("2d");
+
+    //rectangle
+    vtx.fillStyle="white";
+    vtx.fillRect(0,0,300,300);
+
+    vtx.font="30px Arial";
+    vtx.strokeStyle="yellow";
+    vtx.strokeText("rectangle",300,20);
+
+    var grd=vtx.createLinearGradient(300,400,400,500);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "blue");
+    vtx.fillStyle=grd;
+    vtx.fillRect(300,300,500,500);
+    
+
+    </script>
+    </body>
+</html>

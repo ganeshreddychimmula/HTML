@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>formsdemo</title>
+</head>
+<body bgcolor="paleyellow" >
+<form>
+<table border=2>
+<tr>
+<td>name</td>
+<td><input type="text" placeholder="ex:ganesh" pattern=[^a-z]{1-10}></td>
+</tr>
+<tr>
+<td>username</td>
+<td><input type="text" placeholder="ex:ganesh12"></td>
+</tr>
+<tr>
+<td>password</td>
+<td><input type="password"></td>
+</tr>
+<tr>
+<td>gender</td>
+<td><input type="radio" name="r1">male<input type="radio" name="r1">female<input type="radio" name="r1">other</td>
+</tr>
+<tr>
+<td>languages known</td>
+<td><input type="checkbox" checked>telugu<input type="checkbox">hindi<input type="text">other</td>
+</tr>
+<tr>
+<td>adress</td>
+<td><textarea placeholder="h.no,street,town"></textarea></td>
+</tr>
+<tr>
+<td>phone</td>
+<td><input type="text" placeholder="enter your 10 digit phone number" pattern=[0-9]{10}></td>
+</tr>
+<tr>
+<td>date</td>
+<td><input type="date" id="samayam" oninput="dinamu.value=samayam.value">
+<input type="text" placeholder="date of saving" id="dinamu">
+</tr>
+<tr>
+<td>range</td>
+<td><input type="range" min="0" max="100" step=5 id="range" oninput="rangetext.value=range.value" ><input type="text" id="rangetext" pattern=[1-100]{0-100}></td>
+</tr>
+<tr>
+</tr>
+</table>
+<input type="submit" value="save">
+<input type="reset">
+<hr>
+color&nbsp;&nbsp;&nbsp;&nbsp;<input type="color" id="color" oninput="font.value=color.value"><hr>
+color&forall;<input type="text" id="font">
+<meter low="45" min="10" max="100" value="40"></meter></br>
+<del>delete&nbsp;tag</del>
+<ins>underline</ins>
+<mark>marking</mark>
+</form>
+</body>
+</html>

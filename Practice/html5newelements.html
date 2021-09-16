@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>New html elements</title>
+    </head>
+    <body>
+        <h3>video</h3>
+        <video id="avideo" src="mov_bbb.mp4" controls loop muted  >loading song failed</video>
+        <h3>Audio</h3>
+        <audio id="theaudio" src="orange.mp3" controls  loop  >audio isn't working</audio>
+        <div>
+            <button onclick="document.getElementById('theaudio').play()">play</button>
+            <button onclick="document.getElementById('theaudio').pause()">pause</button>
+            <button onclick="document.getElementById('theaudio').volume+=0.1">vol+</button>
+            <button onclick="document.getElementById('theaudio').volume-=0.1">vol-</button>
+        </div>
+        <script>
+            var v=document.getElementById("avideo");
+            v.play();
+        </script>
+
+        <canvas id="mycanvas" >canvas</canvas>
+    </body>
+</html>

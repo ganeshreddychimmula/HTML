@@ -1,0 +1,58 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>webstorage basics</title>
+            <script>
+                //localStorage.removeItem("clickcount");
+                function addition(){
+                if(typeof(Storage)!=="undefined"){//to check if browser supports web storage
+                    if(localStorage.clickcount){
+                        localStorage.clickcount=Number(localStorage.clickcount) + 1;
+                    }
+                    else{
+                        localStorage.clickcount=1;//executes if localStorage.count==0
+                        }
+                    
+                    document.getElementById("result").innerHTML="number of times the button got clicked is  " + localStorage.clickcount;
+                    }
+                else{
+                    document.getElementById("result").innerHTML="sorry! your browser doesn't support webStorage";
+                    }
+                }
+                
+                //localStorage.count=99; //only one initialization of count is enough
+                function subtract(){
+                if(typeof(Storage) !== "undefined"){
+                    localStorage.count=Number(localStorage.count)-1;                    
+                    document.getElementById("final").innerHTML=localStorage.count;                   
+                }
+                else{
+                    alert("error occured or web storage is not supported");
+                } 
+                }
+                function add2(){
+                if(typeof(Storage) !== "undefined"){    
+                    if(sessionStorage.num){
+                     sessionStorage.num=Number(sessionStorage.num) + 2;
+                    }
+                    else{
+                    sessionStorage.num=2;//executes if localStorage.count==0
+                    }                    
+                    document.getElementById("add").innerHTML=sessionStorage.num;
+                }                   
+                else{
+                    alert("error occured or web storage is not supported");
+                }
+                }
+            </script>
+        </head>
+        
+        <body>
+            <button onclick="addition()" type="button">click me</button><br>
+            <div id="result" ></div>
+            <p>counting number of clicks</p>
+            <button id="final" onclick="subtract()" type="button">don't click</button><br>
+            <b>session Storage : </b>
+            <button id="add" onclick="add2()" type="button">add 2</button>
+        </body>
+    </html>
